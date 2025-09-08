@@ -13,9 +13,6 @@ export async function getCartData() {
         })
         const data: CartData = await res.json()
         return data
-    } else {
-        console.log("Token Rquired");
-
     }
 
 }

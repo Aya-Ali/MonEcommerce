@@ -11,7 +11,7 @@ export default function ProductBtn({ id }: { id: string }) {
 
     const countData = useContext(CountContext)
     async function addProduct(id: string) {
-        try {
+    
             const data = await addProductToCart(id)
             if (data.status == 'success') {
                 const sum: number | undefined = data?.data.products.reduce((total: number, el: ProductElement) => {
@@ -23,11 +23,7 @@ export default function ProductBtn({ id }: { id: string }) {
             } else {
                 toast.error("Id incorrect", { position: "top-center" })
             }
-        } catch (err) {
-            alert(err)
-            // toast.error(err, { position: "top-center" })
-
-        }
+      
     }
 
     return (
